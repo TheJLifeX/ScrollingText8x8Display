@@ -61,7 +61,11 @@ void loop()
  * @param `characterOrientation` - optional - Define the character orientation. Can be `TOP`, `RIGHT`, `BOTTOM` or `LEFT`. `TOP` is the normal orientation of a character. So `RIGHT` means the character is rotated to right. Default value is `TOP`.
 
 ```c++
-void init(byte displayRowPins[], byte displayColumnPins[], ScrollingDirection scrollingDirection, CharacterOrientation characterOrientation);
+void init(
+  byte displayRowPins[],
+  byte displayColumnPins[],
+  ScrollingDirection scrollingDirection,
+  CharacterOrientation characterOrientation);
 ```
 ___
 

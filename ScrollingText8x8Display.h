@@ -55,7 +55,7 @@ private:
   // It is the minimal duration that should be used to display a character. Value is in milliseconds.
   float minimalDurationForOneCharacter;
   // This array is a buffer used to display the scrolling text.
-  byte circularBuffer[DISPLAY_SIZE][DISPLAY_SIZE * 2];
+  byte circularBuffer[DISPLAY_SIZE][DISPLAY_SIZE * NUMBER_OF_CHARACTER_IN_BUFFER];
   byte cursor = 0;
   byte displayRowPins[DISPLAY_SIZE];
   byte displayColumnPins[DISPLAY_SIZE];

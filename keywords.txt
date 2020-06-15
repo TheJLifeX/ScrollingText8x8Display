@@ -1,0 +1,17 @@
+# Syntax Coloring Map For ScrollingText8x8Display. see: https://arduino.github.io/arduino-cli/library-specification/#keywords
+
+ScrollingText8x8Display	KEYWORD1
+init	KEYWORD2
+displayText	KEYWORD2
+
+ScrollingDirection	KEYWORD3
+TOP_TO_BOTTOM	LITERAL1
+RIGHT_TO_LEFT	LITERAL1
+BOTTOM_TO_TOP	LITERAL1
+LEFT_TO_RIGHT	LITERAL1
+
+CharacterOrientation	KEYWORD3
+TOP	LITERAL1
+RIGHT	LITERAL1
+BOTTOM	LITERAL1
+LEFT	LITERAL1
