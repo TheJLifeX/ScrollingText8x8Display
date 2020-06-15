@@ -1,6 +1,8 @@
 # ScrollingText8x8Display
 
 ![](docs/images/hello-wold-scrolling-text-arduino.gif)
+
+
 This library allows you to display a scrolling text on a 8x8 LED display.
 
 You can set the scrolling speed, the scrolling direction and also the character orientation.
