@@ -3,6 +3,7 @@
 ScrollingText8x8Display	KEYWORD1
 init	KEYWORD2
 displayText	KEYWORD2
+displayCharacter	KEYWORD2
 
 ScrollingDirection	KEYWORD3
 TOP_TO_BOTTOM	LITERAL1

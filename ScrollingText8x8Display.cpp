@@ -63,6 +63,23 @@ void ScrollingText8x8Display::setCharacterInBuffer(byte newCharacter[DISPLAY_SIZ
  */
 void ScrollingText8x8Display::displayText(String text, unsigned long scrollingSpeed)
 {
+  int textLength = text.length();
+  for (int i = 0; i < textLength; i++)
+  {
+    int charAsInt = (int)(text.charAt(i));
+
+    displayCharacter(charAsInt, scrollingSpeed);
+  }
+}
+
+/**
+ * Display a character on a 8x8 LED display.
+ *
+ * @param index - The index of the character to be displayed. The value is between 0 (0x00) and 255 (0xFF). You can find the characters corresponding to each index here: https://github.com/TheJLifeX/ScrollingText8x8Display#8x8-characters-overview
+ * @param scrollingSpeed - The scrolling speed is between 1.0 (lowest speed) and 100.0 (highest speed). 90.0 is the default value.
+ */
+void ScrollingText8x8Display::displayCharacter(int index, unsigned long scrollingSpeed)
+{
   float duration = map(
       scrollingSpeed,
       MINIMAL_SCROLLING_SPEED,
@@ -70,24 +87,18 @@ void ScrollingText8x8Display::displayText(String text, unsigned long scrollingSp
       MAXIMAL_DURATION_FOR_ONE_CHARACTER,
       minimalDurationForOneCharacter);
 
-  int textLength = text.length();
-  for (int i = 0; i < textLength; i++)
+  if (index < 0 || index >= NUMBER_OF_CHARACTERS)
   {
-    int charAsInt = (int)(text.charAt(i));
-
-    if (charAsInt < 0 || charAsInt >= NUMBER_OF_CHARACTERS)
-    {
-      charAsInt = UNKNOW_CHARACTER;
-    }
-
-    byte asciiCharacter[DISPLAY_SIZE];
-    for (int k = 0; k < DISPLAY_SIZE; k++)
-    {
-      // `pgm_read_byte` function documentation, see: https://www.arduino.cc/reference/en/language/variables/utilities/progmem/
-      asciiCharacter[k] = pgm_read_byte(&(font_8x8[charAsInt][k]));
-    }
-    displayScrolling_8x8_AsciiCharacter(asciiCharacter, duration);
+    index = UNKNOW_CHARACTER;
   }
+
+  byte asciiCharacter[DISPLAY_SIZE];
+  for (int k = 0; k < DISPLAY_SIZE; k++)
+  {
+    // `pgm_read_byte` function documentation, see: https://www.arduino.cc/reference/en/language/variables/utilities/progmem/
+    asciiCharacter[k] = pgm_read_byte(&(font_8x8[index][k]));
+  }
+  displayScrolling_8x8_AsciiCharacter(asciiCharacter, duration);
 }
 
 /**

@@ -78,6 +78,28 @@ ___
   void displayText(String text, unsigned long scrollingSpeed);
 ```
 
+___
+
+### Display a character on a 8x8 LED display.
+* @param `index` - The index of the character to be displayed. The value is between 0 (0x00) and 255 (0xFF). You can find the characters corresponding to each index in the section below:
+* @param `scrollingSpeed` - optional - The scrolling speed is between 1.0 (lowest speed) and 100.0 (highest speed). 90.0 is the default value.
+```c++
+  void displayCharacter(int index, unsigned long scrollingSpeed);
+```
+
+#### 8x8 Characters Overview
+![](docs/images/font-8x8-overview.png)
+
+[image source][5]
+
+To know the index of a character we combine the column index with the row index. Both column and row index are hexadecimal values.
+
+For example the heart ❤ (column index: **0x** and row index: **x3**) is at index **0x03**.
+```c++
+  int heartIndex = 0x03;
+  render.displayCharacter(heartIndex); // display a scrolling heart ❤.
+```
+
 ---
 
 ### ScrollingDirection enumeration
@@ -110,3 +132,4 @@ enum CharacterOrientation
 [2]: https://osoyoo.com/2017/07/15/arduino-lesson-8x8-led-matrix
 [3]: https://mega.nz/folder/TI1QgAKQ#DpCOElh-b6mnEuqUMAVcqQ/folder/aAlUDCwZ
 [4]: http://arduino.cc/en/Guide/Libraries
+[5]: http://www.gammon.com.au/forum/?id=11516

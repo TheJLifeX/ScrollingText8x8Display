@@ -48,6 +48,7 @@ public:
             ScrollingDirection scrollingDirection = RIGHT_TO_LEFT,
             CharacterOrientation characterOrientation = TOP);
   void displayText(String text, unsigned long scrollingSpeed = DEFAULT_SCROLLING_SPEED);
+  void displayCharacter(int index, unsigned long scrollingSpeed = DEFAULT_SCROLLING_SPEED);
 
 private:
   // Time to wait after one frame is displayed. In a frame a single row of LEDs (8 LEDs) are diplayed.
