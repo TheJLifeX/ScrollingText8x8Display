@@ -13,7 +13,7 @@ You can set the scrolling speed, the scrolling direction and also the character 
 
 ### Hardware
 
-Read the tutorials below to learn to setup a 8x8 LED display with arduino:
+Read the tutorials below to learn how to setup a 8x8 LED display with arduino:
 * [Arduino Lesson - 8x8 LED display][2]
 * [Use 8x8 LED display to display letters.][3]
 
